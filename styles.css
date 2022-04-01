@@ -21,3 +21,7 @@ body {
     background-color: gray;
     color: white;
 }
+
+.results-container {
+    margin-top: 20px;
+}

@@ -4,49 +4,58 @@ function computerPlay() {
     return randomChoice;
 }
 
+const resultsContainer = document.querySelector(".results-container");
 
+const youPlayed = document.createElement("p");
+resultsContainer.appendChild(youPlayed);
+
+const theyPlayed = document.createElement("p");
+resultsContainer.appendChild(theyPlayed);
+
+const outcome = document.createElement("p");
+resultsContainer.appendChild(outcome);
 
 function playRound(playerSelection, computerSelection) {
     playerSelection.toLowerCase();
 
-    console.log("You played " + playerSelection + "!");
-    console.log("Your opponent played " + computerSelection + "!");
+    youPlayed.textContent = "You played " + playerSelection + "!";
+    theyPlayed.textContent = "Your opponent played " + computerSelection + "!";
 
     switch(true) {
         case playerSelection == "rock" && computerSelection == "rock":
-            console.log("It's a tie!");
+            outcome.textContent = ("It's a tie!");
             return 0;
             break;
         case playerSelection == "rock" && computerSelection == "paper":
-            console.log("You lost! Paper beats rock");
+            outcome.textContent = ("You lost! Paper beats rock");
             return 0;
             break;
         case playerSelection == "rock" && computerSelection == "scissors":
-            console.log("You Won! Rock beats scissors");
+            outcome.textContent = ("You Won! Rock beats scissors");
             return 1;
             break;
         case playerSelection == "paper" && computerSelection == "rock":
-            console.log("You Won! Paper beats rock");
+            outcome.textContent = ("You Won! Paper beats rock");
             return 1;
             break;
         case playerSelection == "paper" && computerSelection == "paper":
-            console.log("It's a tie!");
+            outcome.textContent = ("It's a tie!");
             return 0;
             break;
         case playerSelection == "paper" && computerSelection == "scissors":
-            console.log("You lost! Scissors beat paper");
+            outcome.textContent = ("You lost! Scissors beat paper");
             return 0;
             break;
         case playerSelection == "scissors" && computerSelection == "rock":
-            console.log("You lost! Rock beats scissors");
+            outcome.textContent = ("You lost! Rock beats scissors");
             return 0;
             break;
         case playerSelection == "scissors" && computerSelection == "paper":
-            console.log("You won! Scissors beat paper");
+            outcome.textContent = ("You won! Scissors beat paper");
             return 1;
             break;
         case playerSelection == "scissors" && computerSelection == "scissors":
-            console.log("It's a tie!");
+            outcome.textContent = ("It's a tie!");
             return 0;
             break;
     }
