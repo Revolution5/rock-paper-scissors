@@ -52,24 +52,40 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-function game() {
-    let score = 0;
+const btnrock = document.querySelector(".btnrock");
+const btnpaper = document.querySelector(".btnpaper");
+const btnscissors = document.querySelector(".btnscissors");
 
-    for(let i = 0; i < 5; i++) {
-        let playerChoice = window.prompt("Enter Rock, Paper, or Scissors: ");
-        let computerChoice = computerPlay();
+btnrock.addEventListener("click", function(event) {
+    playRound("rock", computerPlay());
+})
 
-        result = playRound(playerChoice, computerChoice);
-        score += result;
-        console.log("Current score: " + score + "\n");
-    }
+btnpaper.addEventListener("click", function(event) {
+    playRound("paper", computerPlay());
+})
 
-    if (score >= 3) {
-        console.log("You won the game!");
-    }
-    else {
-        console.log("You lost the game! get rekt");
-    }
-}
+btnscissors.addEventListener("click", function(event) {
+    playRound("scissors", computerPlay());
+})
 
-console.log(game());
+// function game() {
+//     let score = 0;
+
+//     for(let i = 0; i < 5; i++) {
+//         let playerChoice = window.prompt("Enter Rock, Paper, or Scissors: ");
+//         let computerChoice = computerPlay();
+
+//         result = playRound(playerChoice, computerChoice);
+//         score += result;
+//         console.log("Current score: " + score + "\n");
+//     }
+
+//     if (score >= 3) {
+//         console.log("You won the game!");
+//     }
+//     else {
+//         console.log("You lost the game! get rekt");
+//     }
+// }
+
+// console.log(game());

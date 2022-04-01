@@ -15,7 +15,7 @@ body {
     gap: 18px;
 }
 
-.btn {
+.btnrock, .btnpaper, .btnscissors {
     width: 100px;
     height: 100px;
     background-color: gray;
